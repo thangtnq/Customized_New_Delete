@@ -1,0 +1,28 @@
+
+
+---- Testing DEBUG ----
+
+      Mem Lib: stress test: 281.702423 ms 
+Custom Memory: stress test: 170.589584 ms 
+              times faster: 1.651346 
+
+ testCount: 17
+  testPass: 17
+  testFail: 0
+indvChecks: 2534
+
+-----------------
+
+
+---- Testing RELEASE ----
+
+      Mem Lib: stress test: 79.936745 ms 
+Custom Memory: stress test: 19.305552 ms 
+              times faster: 4.140609 
+
+ testCount: 17
+  testPass: 17
+  testFail: 0
+indvChecks: 2534
+
+-----------------

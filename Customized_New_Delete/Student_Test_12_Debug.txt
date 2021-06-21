@@ -1,0 +1,87 @@
+Program Assignment 
+Name: Student_Test_12
+Mode: DEBUG
+
+-------------------------------------------------
+
+Test12: 
+
+ 1) used                                              
+ 2) used                                              
+ 3) used     (make sure it's consumes 100 percent of heap)             
+ 4) bottom up   
+
+     Mem mem;                     
+     mem.Initialize();            
+     void *a = mem.Malloc( 0x4280 );       
+     void *b = mem.Malloc( 0x4280 );       
+     void *c = mem.Malloc( 0x42a0 );       
+     mem.Dump();                        
+     mem.Free( c );                     
+     mem.Dump();                        
+     mem.Free( b );                     
+     mem.Dump();                        
+     mem.Free( a );                     
+     mem.Dump();                        
+
+------- DUMP -------------
+
+heapStart: 0x0130D040     
+  heapEnd: 0x01319840   
+
+pUsedHead: 0x01315590     
+pFreeHead: 0x00000000     
+ pNextFit: 0x00000000   
+
+Heap Hdr   s: 0130D040  e: 0130D070                            size: 0x30 
+USED HDR   s: 0130D070  e: 0130D080  p: 01311300  n: 00000000  size: 0x10    AF: 0 
+USED       s: 0130D080  e: 01311300                            size: 0x4280 
+USED HDR   s: 01311300  e: 01311310  p: 01315590  n: 0130D070  size: 0x10    AF: 0 
+USED       s: 01311310  e: 01315590                            size: 0x4280 
+USED HDR   s: 01315590  e: 013155A0  p: 00000000  n: 01311300  size: 0x10    AF: 0 
+USED       s: 013155A0  e: 01319840                            size: 0x42a0 
+
+------- DUMP -------------
+
+heapStart: 0x0130D040     
+  heapEnd: 0x01319840   
+
+pUsedHead: 0x01311300     
+pFreeHead: 0x01315590     
+ pNextFit: 0x01315590   
+
+Heap Hdr   s: 0130D040  e: 0130D070                            size: 0x30 
+USED HDR   s: 0130D070  e: 0130D080  p: 01311300  n: 00000000  size: 0x10    AF: 0 
+USED       s: 0130D080  e: 01311300                            size: 0x4280 
+USED HDR   s: 01311300  e: 01311310  p: 00000000  n: 0130D070  size: 0x10    AF: 0 
+USED       s: 01311310  e: 01315590                            size: 0x4280 
+FREE HDR   s: 01315590  e: 013155A0  p: 00000000  n: 00000000  size: 0x10    AF: 0 
+FREE       s: 013155A0  e: 01319840                            size: 0x42a0 
+
+------- DUMP -------------
+
+heapStart: 0x0130D040     
+  heapEnd: 0x01319840   
+
+pUsedHead: 0x0130D070     
+pFreeHead: 0x01311300     
+ pNextFit: 0x01311300   
+
+Heap Hdr   s: 0130D040  e: 0130D070                            size: 0x30 
+USED HDR   s: 0130D070  e: 0130D080  p: 00000000  n: 00000000  size: 0x10    AF: 0 
+USED       s: 0130D080  e: 01311300                            size: 0x4280 
+FREE HDR   s: 01311300  e: 01311310  p: 00000000  n: 00000000  size: 0x10    AF: 0 
+FREE       s: 01311310  e: 01319840                            size: 0x8530 
+
+------- DUMP -------------
+
+heapStart: 0x0130D040     
+  heapEnd: 0x01319840   
+
+pUsedHead: 0x00000000     
+pFreeHead: 0x0130D070     
+ pNextFit: 0x0130D070   
+
+Heap Hdr   s: 0130D040  e: 0130D070                            size: 0x30 
+FREE HDR   s: 0130D070  e: 0130D080  p: 00000000  n: 00000000  size: 0x10    AF: 0 
+FREE       s: 0130D080  e: 01319840                            size: 0xc7c0 
