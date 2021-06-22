@@ -1,0 +1,2 @@
+Test Driven Development. Write a complete memory allocation and deallocation system from scratch by following test specifications.
+Merge free memory as necessary to avoid memory fragment, use secret pointer to keep track of allocation.
